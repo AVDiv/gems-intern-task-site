@@ -27,7 +27,7 @@ export class ContactForm extends React.Component{
                 </div>
                 <div className='flex flex-col'>
                     <label className='text-gray-700 mb-3'>Services</label>
-                    <div className='text-base text-gray-600 grid grid-cols-2'>
+                    <div className='text-base text-gray-600 grid grid-cols-2 space-y-2'>
                         <div className='flex items-center'>
                             <input type='checkbox' className='mr-2 h-4 w-4'/>
                             <label>Web design</label>
@@ -54,7 +54,7 @@ export class ContactForm extends React.Component{
                         </div>
                     </div>
                 </div>
-                <div className='flex items-center text-base'>
+                <div className='flex items-center text-base pt-2'>
                     <input type='checkbox' name='policy' className='mr-2 h-4 w-4'/> <span className='text-slate-500'>I agree to our friendly <a href='#' className='underline'>privacy policy</a></span>
                 </div>
                 <div className='flex justify-center text-base'>
