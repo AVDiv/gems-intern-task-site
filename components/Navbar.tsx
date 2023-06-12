@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Logo from '../public/logo.png'
 import { HiMenu } from 'react-icons/hi'
 import { MdClose } from 'react-icons/md'
-import { ToggleButton } from './buttons/ToggleButton'
+import { ToggleButton } from './Buttons/ToggleButton'
 import { NavbarMenuItem } from './NavbarItems/NavbarMenuItem'
 import { NavbarDropdownMenuItem } from './NavbarItems/NavbarDropdownMenuItem'
 import { DropdownMenus } from './NavbarItems/DropdownMenus'
@@ -26,7 +26,7 @@ export class Navbar extends React.Component{
 
     render() {
         return (
-            <nav className=" bg-white shadow-sm shadow-slate-200">
+            <nav className="fixed bg-white shadow-sm shadow-slate-200 w-full">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex justify-between h-16">
                         <div className="flex">
