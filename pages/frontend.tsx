@@ -3,6 +3,7 @@ import Image from "next/image"
 // Custom Components
 import { Navbar } from "../components/Navbar"
 import { ContactForm } from "../components/ContactForm"
+import { Footer } from "../components/Footer"
 // Images
 import BackgroundImage from "../public/background.jpg"
 
@@ -24,6 +25,7 @@ export default function FrontendTask() {
           <ContactForm />
         </div>
       </div>
+      <Footer />
     </>
   )
 }
