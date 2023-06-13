@@ -7,10 +7,10 @@ import * as Icons from 'react-icons/fa'
 export const NavbarDropdownMenuItem = (props: any) => {
     return(
     <div>
-        <span className="text-gray-500 md:hover:bg-gray-700 md:hover:text-white px-3 py-2 rounded-md text-2xl md:text-sm font-normal peer">
+        <span className="text-gray-500 md:hover:bg-gray-700 md:hover:text-white px-3 py-2 rounded-md text-lg md:text-sm font-normal peer">
             {props.children} <Icons.FaCaretDown className='inline-block' />
         </span>
-        <div className="hidden peer-hover:block hover:block md:absolute md:bg-white text-gray-700 md:shadow-md rounded-md mt-2 text-2xl md:text-sm">
+        <div className="hidden peer-hover:block hover:block md:absolute md:bg-white text-gray-700 md:shadow-md rounded-md mt-2 text-base md:text-sm">
             {props.menus.map((item: any, index: number) => {
                 const IconComponent = Icons[item.icon];
                 return(
