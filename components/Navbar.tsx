@@ -8,7 +8,7 @@ import { NavbarMenuItem } from './NavbarItems/NavbarMenuItem'
 import { NavbarDropdownMenuItem } from './NavbarItems/NavbarDropdownMenuItem'
 import { DropdownMenus } from './NavbarItems/DropdownMenus'
 
-export class Navbar extends React.Component{
+export class Navbar extends React.Component<{}, {isMenuOpen: boolean, DropdownMenus: any}>{
     constructor(props: any) {
         super(props);
         this.state = {
