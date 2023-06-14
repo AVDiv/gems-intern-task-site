@@ -29,7 +29,7 @@ export class ContactForm extends React.Component{
     }
 
     setStateSync(stateUpdate: any) {
-        return new Promise(resolve => {
+        return new Promise<void>(resolve => {
             this.setState(stateUpdate, () => resolve());
         });
     }
