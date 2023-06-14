@@ -1,5 +1,6 @@
 //  Predefined Components
 import Image from "next/image"
+import Head from "next/head"
 // Custom Components
 import { Navbar } from "../components/Navbar"
 import { ContactForm } from "../components/ContactForm"
@@ -10,6 +11,9 @@ import BackgroundImage from "../public/background.jpg"
 export default function FrontendTask() {
   return (
     <>
+      <Head>
+        <title>Frontend Task</title>
+      </Head>
       <Navbar />
       <div className="flex items-stretch min-h-screen">
         <div className="min-h-screen hidden lg:block">
