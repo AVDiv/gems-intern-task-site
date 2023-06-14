@@ -32,7 +32,7 @@ export class Footer extends React.Component{
             </div>
             <div className="bg-white w-full">
                 <div className='mx-auto w-full max-w-screen-xl flex sm:items-center sm:justify-between py-6 lg:py-8 px-4 flex-col-reverse sm:flex-row xl:px-0'>
-                    <span className="text-sm text-gray-500 dark:text-gray-400 mt-4 sm:mt-0">© 2023 <Link href="/frontend" className="hover:underline">Frontend UI</Link>. All Rights Reserved. Made by <Link href="https://github.com/AVDiv" className="hover:underline" target='_'>AVDiv</Link>.</span>
+                    <span className="text-sm text-gray-500 dark:text-gray-400 mt-4 sm:mt-0">&copy; 2023 <Link href="/frontend" className="hover:underline">Frontend UI</Link>. All Rights Reserved. Made by <Link href="https://github.com/AVDiv" className="hover:underline" target='_'>AVDiv</Link>.</span>
                     <div className="flex space-x-6 sm:justify-center">
                         {SocialHandles.map((menu, index: number) => {
                             return <SocialIcon key={index} {...menu}/>

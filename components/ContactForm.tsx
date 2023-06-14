@@ -186,7 +186,7 @@ export class ContactForm extends React.Component{
             {this.state.submitStatus === 201 && <AlertMessage success={true}/>}
             {(this.state.submitStatus === 400 && !this.state.hasErrors)?<AlertMessage success={false}/>:null}
             <div>
-                <h1 className='text-3xl leading-10 mb-3 md:text-5xl md:leading-[3.8rem] md:mb-6'>Let's level up your brand, together</h1>
+                <h1 className='text-3xl leading-10 mb-3 md:text-5xl md:leading-[3.8rem] md:mb-6'>Let&apos;s level up your brand, together</h1>
                 <p className='text-gray-500 mb-7 text-lg'>You can reach us anytime via <Link href="mailto:hi@untitledui.com" className='text-gray-700 hover:underline'>hi@untitledui.com</Link></p>
             </div>
             <form className='space-y-6 text-sm' onSubmit={(event) => this.validateForm(event)}>
@@ -216,8 +216,8 @@ export class ContactForm extends React.Component{
                         {ServiceList?.map((service, index) => {
                             return (
                                 <div className='flex items-center' key={index}>
-                                    <input type='checkbox' name={service} className='mr-2 h-4 w-4' onChange={this.modifyServiceList}/>
-                                    <label htmlFor={service}>{service}</label>
+                                    <input type='checkbox' name={service.toLowerCase().replace(" ","")} className='mr-2 h-4 w-4' onChange={this.modifyServiceList}/>
+                                    <label htmlFor={service.toLowerCase().replace(" ","")}>{service}</label>
                                 </div>
                             )
                         })}
