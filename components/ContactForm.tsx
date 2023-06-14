@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { ServiceList } from './ContactFormItems/ServiceList';
 import { AlertMessage } from './ContactFormItems/AlertMessage';
 import { FaCircleNotch } from 'react-icons/fa';
-export class ContactForm extends React.Component{
+export class ContactForm extends React.Component<any, any>{
     constructor(props: any) {
         super(props);
         this.state = {
@@ -34,10 +34,10 @@ export class ContactForm extends React.Component{
         });
     }
 
-    modifyServiceList(event: Event) {
+    modifyServiceList(element: HTMLInputElement) {
         let services = this.state.services;
-        let service = event.target.getAttribute('data-name');
-        if (event.target.checked) {
+        let service = element.getAttribute('data-name');
+        if (element.checked) {
             services.push(service);
         } else {
             services.splice(services.indexOf(service), 1);
@@ -45,15 +45,15 @@ export class ContactForm extends React.Component{
         this.setState({services: services});
     }
 
-    decoratePhoneField(event: Event) {
-        let phone = event.target.value;
+    decoratePhoneField(element: HTMLInputElement) {
+        let phone = element.value;
         if (phone.length === 10) {
             phone = phone.replace(/(\d{3})(\d{3})(\d{4})/, '($1) $2-$3');
         }
-        event.target.value = phone;
+        element.value = phone;
     }
 
-    async validateForm(event: Event) {
+    async validateForm(event: React.FormEvent<HTMLFormElement>) {
         await this.setStateSync({hasErrors: false})
         // Validate name
         if (this.state.name.match(/[^a-zA-Z ]/)) {
@@ -202,7 +202,7 @@ export class ContactForm extends React.Component{
                 </div>
                 <div className='flex flex-col'>
                     <label className='text-gray-700 mb-1'>Phone number</label>
-                    <input type='text' className='border border-gray-300 rounded-md p-2' name='phone' placeholder='(555) 000-0000' maxLength={10} onChange={(event) => {this.setState({phone: event.target.value, errorMessages: {...this.state.errorMessages, phone: ''}});this.decoratePhoneField(event)}} required/>
+                    <input type='text' className='border border-gray-300 rounded-md p-2' name='phone' placeholder='(555) 000-0000' maxLength={10} onChange={(event) => {this.setState({phone: event.target.value, errorMessages: {...this.state.errorMessages, phone: ''}});this.decoratePhoneField(event.target as HTMLInputElement)}} required/>
                     {this.state.errorMessages.phone && <div className='bg-red-200 text-red-600 mx-1 rounded-b px-2 text-xs'>{this.state.errorMessages.phone}</div>}
                 </div>
                 <div className='flex flex-col'>
@@ -216,7 +216,7 @@ export class ContactForm extends React.Component{
                         {ServiceList?.map((service, index) => {
                             return (
                                 <div className='flex items-center' key={index}>
-                                    <input type='checkbox' name={service.toLowerCase().replace(" ","")} className='mr-2 h-4 w-4' onChange={this.modifyServiceList}/>
+                                    <input type='checkbox' name={service.toLowerCase().replace(" ","")} className='mr-2 h-4 w-4' onChange={(event) => this.modifyServiceList(event.target as HTMLInputElement)}/>
                                     <label htmlFor={service.toLowerCase().replace(" ","")}>{service}</label>
                                 </div>
                             )
