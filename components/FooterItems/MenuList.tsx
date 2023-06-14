@@ -3,8 +3,8 @@ import Link from 'next/link'
 export const MenuList = (props: any) => {
     return(
         <div>
-            <h2 className="mb-6 text-sm text-gray-400">{props.children}</h2>
-            <ul className="text-sm text-gray-500 font-medium">
+            <h2 className="mb-6 text-sm text-gray-600">{props.children}</h2>
+            <ul className="text-sm text-gray-800 font-medium">
                     {props.menuItems.map((menu: any, index: number) => {
                         return (
                         <li className="mb-4 flex items-center" key={index}>
